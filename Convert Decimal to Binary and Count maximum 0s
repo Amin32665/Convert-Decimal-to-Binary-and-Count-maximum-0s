@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int num, decimal_num, remainder, base = 1, binary = 0, no_of_0s = 0; // Initialized//
+ 
+    cout<<"Enter a decimal integer = "; // Comment for user of decimal value//
+    cin>> num;  // Ask from user to enter the value of decimal that convert to binary//
+    decimal_num = num; // In this line thr number that user enter is equal to decimal_num//
+    while (num > 0)  // Take a while loop that number that user entered is greater than 0//
+    {
+        remainder = num % 2;  // In this line take the modulus of entered number with 2 that is equal to remainder//
+        num = num /= 2; 
+        binary = binary + remainder * base ; // In this line find the binary value...binary value that Initialized (0) + remainder value we find * the base value we Initialized (0)//
+        base = base * 10;
+        /*  To count no.of 0' s */
+        if (remainder == 0)   // In this line if remainder is equal to 0//
+        {
+            no_of_0s++;   // In this line it will count the number of 0's//
+        }
+    }
+    cout<<"Input number is = "<< decimal_num<<"\n";       // Output of entered number//
+    cout<<"It's binary equivalent is = " <<binary<<"\n";   // Output of Binary number that convert from decimal_num//
+    cout<<"No.of 0's in the binary number is = " <<no_of_0s; // Output that counts the number of 0s//
+}
